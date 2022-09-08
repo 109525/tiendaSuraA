@@ -4,6 +4,7 @@ console.log("hola estoy detallando la compra")
 let producto=JSON.parse(localStorage.getItem("producto"))
 console.log(producto)
 
+//pintamos el carrito 
 let carrito
 if(JSON.parse(localStorage.getItem("carrito"))!=null){
     carrito=JSON.parse(localStorage.getItem("carrito"))

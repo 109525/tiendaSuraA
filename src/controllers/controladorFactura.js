@@ -1,8 +1,11 @@
 let carrito=JSON.parse(localStorage.getItem("carrito"))
 let totalCompra=document.getElementById("totalCompra")
 
+
 //
 let factura=document.getElementById("factura")
+
+let total = 0;
 
 //compruebo el estadso del carrito de compras 
 if(carrito==null){
@@ -23,6 +26,8 @@ if(carrito==null){
     let mensaje=document.createElement("h3")
     mensaje.classList.add("text-center")
     mensaje.textContent="tu carrito esta vacio, pobre asqueroso"
+
+    
 
     columna.appendChild(imagen)
     columna.appendChild(mensaje)
@@ -79,6 +84,10 @@ if(carrito==null){
     console.log(subtotalcalculado)
     subtotal.textContent="$"+subtotalcalculado 
 
+    total=total + subtotalcalculado
+
+    
+
     
 
     let botonLimpiarCarrito=document.getElementById("botonlimpiar")
@@ -108,5 +117,8 @@ if(carrito==null){
     factura.appendChild(fila)
         
     })
+    
+    console.log(total)
+    totalCompra.textContent= "$" + total
 
 }
